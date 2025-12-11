@@ -6,6 +6,8 @@
     <title>Butterfly Budget Tracker</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Babel Standalone for in-browser TSX compilation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script>
       tailwind.config = {
         theme: {
@@ -106,6 +108,11 @@
   <body>
     <div id="startup-error"></div>
     <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+    <!-- 
+      type="text/babel" tells Babel to compile this.
+      data-type="module" tells Babel to output an ES module so browsers can use 'importmap'.
+      data-presets="react,typescript" enables React (JSX) and TypeScript parsing.
+    -->
+    <script type="text/babel" data-type="module" data-presets="react,typescript" src="/index.tsx"></script>
   </body>
 </html>
