@@ -8,6 +8,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Babel Standalone for in-browser TSX compilation -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Environment Variable Polyfill -->
+    <script>
+      window.process = {
+        env: {
+          API_KEY: "{{ api_key }}"
+        }
+      };
+    </script>
+
     <script>
       tailwind.config = {
         theme: {
